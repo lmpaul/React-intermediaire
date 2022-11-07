@@ -1,5 +1,24 @@
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import colors from '../../utils/style/colors'
+import styled from 'styled-components'
+import Answer from '../../components/Answer'
+
+const QuestionContainer = styled.div`
+  text-align: center;
+`
+
+const QuestionTitle = styled.h1`
+  text-decoration: underline; 
+  text-decoration-color: ${colors.primary};
+  line-height: 30px;
+`
+
+const StyledLink = styled(Link)`
+  color: black; 
+  text-decoration: underline; 
+  margin: 10px 60px;
+`
 
 function Survey() {
   const { questionNumber } = useParams()
@@ -7,16 +26,18 @@ function Survey() {
   const prevQuestionNumber = questionNumberInt === 1 ? 1 : questionNumberInt - 1
   const nextQuestionNumber = questionNumberInt + 1
   return (
-    <div>
-      <h1>Questionnaire 🧮</h1>
-      <h2>Question {questionNumber}</h2>
-      <Link to={`/survey/${prevQuestionNumber}`}>Précédent</Link>
+    <QuestionContainer>
+      <QuestionTitle>Question {questionNumber}</QuestionTitle>
+      <p>Votre application doit-elle impérativement apparaître en premier dans les résultats de recherche ?</p>
+      <Answer/>
+      <StyledLink to={`/survey/${prevQuestionNumber}`}>Précédent</StyledLink>
       {questionNumberInt === 10 ? (
-        <Link to="/results">Résultats</Link>
+        <StyledLink to="/results">Résultats</StyledLink>
       ) : (
-        <Link to={`/survey/${nextQuestionNumber}`}>Suivant</Link>
+        <StyledLink to={`/survey/${nextQuestionNumber}`}>Suivant</StyledLink>
       )}
-    </div>
+    </QuestionContainer>
+
   )
 }
 
