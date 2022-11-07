@@ -22,7 +22,10 @@ const CardWrapper = styled.div`
   background-color: ${colors.backgroundLight};
   border-radius: 30px;
   width: 350px;
+  height: 200px;
   transition: 200ms;
+  align-items :center;
+  justify-content: space-around;
   &:hover {
     cursor: pointer;
     box-shadow: 2px 2px 10px #e2e3e9;
