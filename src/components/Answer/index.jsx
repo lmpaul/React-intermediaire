@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import colors from "../../utils/style/colors"
-import { useState } from "react"
 
 const ButtonContainer = styled.div`
     width: 550px;
@@ -23,7 +22,6 @@ const Button = styled.div`
 
 
 function Answer() {
-    const [answer, setAnswer] = useState("")
     return(
     <ButtonContainer>
         <Button $isSelected>Oui</Button>

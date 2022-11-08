@@ -9,7 +9,7 @@ const ErrorWrapper = styled.div`
   margin: 0 auto;
   text-align: center;
   & p {
-    font-size: 18px; 
+    font-size: 20px; 
     font-weight: bold;
     padding: 50px 0;
   }
