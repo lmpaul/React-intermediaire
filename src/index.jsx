@@ -1,13 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { createGlobalStyle } from 'styled-components'
+
 import Home from './pages/Home'
 import Survey from './pages/Survey'
 import Results from './pages/Results'
 import Freelances from './pages/Freelances'
 import Header from './components/Header'
 import Error from './components/Error'
-import { createGlobalStyle } from 'styled-components'
+
 
 const GlobalStyle = createGlobalStyle`
     * {
